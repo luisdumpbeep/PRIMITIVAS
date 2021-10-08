@@ -36,5 +36,7 @@ def cambioCiclo(numeroSalidos):
     if (len(numeroSalidos)==49):
         return True
 
+print("NUMERO DE CICLOS: ")
+ciclos = int(input())
+numeroCiclos(ciclos)  
 
-numeroCiclos(10)

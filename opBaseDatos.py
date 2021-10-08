@@ -17,6 +17,23 @@ def leeSorteos():
 
     return combinaciones
 
+def leeSorteosAnno(anno):
+    anno = anno * 10000
+    annoFinal = anno + 10000
+    conexion = sqlite3.connect("PRIMITIVA.db")
+    cursor = conexion.cursor()
+    
+    instruccion = (f"SELECT FECHA, B1, B2, B3, B4, B5, B6 FROM tablaSorteos WHERE FECHA>{anno} AND FECHA<{annoFinal} ORDER BY FECHA DESC")
+
+    cursor.execute(instruccion)
+
+    combinaciones = cursor.fetchall()
+
+    cursor.close()
+    conexion.close()
+
+    return combinaciones
+
 def aparicionesHistorico(*args):
 
     
